@@ -1,0 +1,117 @@
+//aristero moter
+int mta=3;
+int mta2=5;
+int en1=6;
+
+//deksi moter
+int mtb=9;
+int mtb2=10;
+int en2=11;
+
+void setup(){
+  pinMode(mta,OUTPUT);
+  pinMode(mta2,OUTPUT);
+  pinMode(mtb,OUTPUT);
+  pinMode(mtb2,OUTPUT);
+  pinMode(en1,OUTPUT);
+  pinMode(en2,OUTPUT);
+
+  
+  pinMode(A0,INPUT);
+  pinMode(A1,INPUT);
+  pinMode(A2,INPUT);
+  pinMode(A3,INPUT);
+  }
+
+
+void loop(){
+  
+   int fulldeksia=analogRead(A0);
+  int deksia=analogRead(A1);
+  int aristera=analogRead(A2);
+  int fullaristera=analogRead(A3);
+  
+//isia
+  if (deksia<800 && aristera<800 &&  fulldeksia<800 && fullaristera<800  ){
+    
+    digitalWrite(mta,HIGH);
+    digitalWrite(mta2,LOW);
+    digitalWrite(mtb,HIGH);
+    digitalWrite(mtb2,LOW);
+    analogWrite(en1,160);
+    analogWrite(en2,160);
+
+    }
+
+
+    
+//apotomo deksia20
+if (fulldeksia>800 && deksia<800 && aristera<800 && fullaristera<800   ){
+    
+    digitalWrite(mta,HIGH);
+    digitalWrite(mta2,LOW);
+    digitalWrite(mtb,HIGH);
+    digitalWrite(mtb2,LOW);
+    analogWrite(en1,100);
+    analogWrite(en2,40);
+    }
+// apotomo aristera
+  if (fullaristera>800 && aristera<800 && deksia<800 && fulldeksia<800     ){
+    
+    digitalWrite(mta,HIGH);
+    digitalWrite(mta2,LOW);
+    digitalWrite(mtb,HIGH);
+    digitalWrite(mtb2,LOW);
+    analogWrite(en1,40);
+    analogWrite(en2,100);
+
+    } 
+  //deksia
+if(deksia>800 && aristera<800  && fulldeksia<900 && fullaristera<800){
+    
+    digitalWrite(mta,HIGH);
+    digitalWrite(mta2,LOW);
+    digitalWrite(mtb,HIGH);
+    digitalWrite(mtb2,LOW);
+    analogWrite(en1,120);
+    analogWrite(en2,70);
+
+    }
+//aristera
+if(aristera>800 && deksia<800 && fulldeksia<800 && fullaristera<800){
+  
+  digitalWrite(mta,HIGH);
+    digitalWrite(mta2,LOW);
+    digitalWrite(mtb,HIGH);
+    digitalWrite(mtb2,LOW);
+    analogWrite(en1,70);
+    analogWrite(en2,120);
+  
+  }
+
+//stop
+
+  //if(fullaristera>800 && aristera>800 && deksia>800 && fulldeksia>800){
+      
+    //digitalWrite(mta,LOW);
+    //digitalWrite(mta2,LOW);
+    //digitalWrite(mtb,LOW);
+    //digitalWrite(mtb2,LOW);
+ 
+    
+   // }
+    
+   
+    
+    
+    
+    
+    
+    
+    
+
+
+
+  
+  }
+  
